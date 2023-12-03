@@ -182,7 +182,7 @@ const Category = () => {
 <div className="flex items-center flex-wrap pt-5 sm:mt-4">
 {games.map((game) => (
   <div key={game.id} className='me-5 mb-5 ' >
-    <Image src={game.img} className='rounded-lg object-cover h-64 w-44 shadow-md' alt="" />
+    <Image width={112} height={112}  src={game.img} className='rounded-lg object-cover h-64 w-44 shadow-md' alt="" />
     <div>
       <h3 className='text-xl font-bold leading-7 text-black dark:text-white'>{game.title}</h3>
       <div className="flex items-center">

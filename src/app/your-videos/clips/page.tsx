@@ -138,7 +138,7 @@ const clips : React.FC = () => {
                 </div>
               </div>
 
-              <Image src={post.img} alt="" className="rounded-l-lg h-44 w-full object-cover"/>
+              <Image width={112} height={112}  src={post.img} alt="" className="rounded-l-lg h-44 w-full object-cover"/>
            <div className="border-b border-t  border-r border-gray-200 px-4 pb-3 h-full w-full rounded-r-lg flex flex-col justify-center">
           
               <div className="group relative flex justify-between flex-col">
@@ -164,7 +164,7 @@ const clips : React.FC = () => {
               </div>
               </div>
               <div className="mt-4  flex items-center gap-x-4 pb-0 mb-0 ">
-                <Image src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                <Image width={112} height={112}  src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
                 <div className="flex items-center mt-3">
                  <div className="flex">
                  <p className="font-semibold text-gray-900">

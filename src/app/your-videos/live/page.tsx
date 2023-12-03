@@ -14,7 +14,7 @@ const posts = [
       title: 'Boost your conversion rate',
       href: '#',
       img:'https://images.unsplash.com/photo-1701223555020-054e2beabbaf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: [{ title: 'Search', href: '#' },{ title: 'Viral', href: '#' },{ title: 'Marketing', href: '#' }],
+      category: [{ id: 1,title: 'Search', href: '#' },{ id: 2,title: 'Viral', href: '#' },{ id: 3,title: 'Marketing', href: '#' }],
       author: {
         name: 'Michael Foster',
         href: '#',
@@ -28,7 +28,7 @@ const posts = [
       title: 'Laravel to React Nextjs',
       href: '#',
       img:'https://images.unsplash.com/photo-1682686581663-179efad3cd2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: [{ title: 'YIU', href: '#' },{ title: 'Tech', href: '#' },{ title: 'AI', href: '#' }],
+      category: [{ id: 1,title: 'YIU', href: '#' },{ id: 1,title: 'Tech', href: '#' },{ id: 1,title: 'AI', href: '#' }],
       author: {
         name: 'Michael Foster',
         href: '#',
@@ -42,7 +42,7 @@ const posts = [
       title: 'One of my Favirite Game ',
       href: '#',
       img:'https://images.unsplash.com/photo-1682685797208-c741d58c2eff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+      category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
       author: {
         name: 'Michael Foster',
         href: '#',
@@ -56,7 +56,7 @@ const posts = [
       title: 'Enjoy Natural Places',
       href: '#',
       img:'https://images.unsplash.com/photo-1682687982183-c2937a74257c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+      category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
       author: {
         name: 'Michael Foster',
         href: '#',
@@ -70,7 +70,7 @@ const posts = [
       title: 'Boost your conversion rate',
       href: '#',
       img:'https://images.unsplash.com/photo-1596683858875-63d85de92743?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+      category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
       author: {
         name: 'Michael Foster',
         href: '#',
@@ -84,7 +84,7 @@ const posts = [
       title: 'Boost your conversion rate',
       href: '#',
       img:'https://images.unsplash.com/photo-1701136941793-cfdc15d7f9de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+      category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
       author: {
         name: 'Michael Foster',
         href: '#',
@@ -130,7 +130,7 @@ const live: React.FC = () => {
                 </div>
               </div>
 
-              <Image src={post.img} alt="" className="rounded-t-lg h-44 w-full object-cover"/>
+              <Image width={112} height={112}  src={post.img} alt="" className="rounded-t-lg h-44 w-full object-cover"/>
            <div className="border-b border-l border-r border-gray-200 px-4 pb-3 w-full rounded-b-lg">
           
               <div className="group relative">
@@ -142,6 +142,7 @@ const live: React.FC = () => {
                 <div className="flex items-center text-xs mt-3">
                 {post.category.map((item) => (
                 <a
+                key={item.id}
                   href={item.href}
                   className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                 >
@@ -151,7 +152,7 @@ const live: React.FC = () => {
               </div>
               </div>
               <div className="relative flex items-center gap-x-4">
-                <Image src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                <Image width={112} height={112}  src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
                 <div className="flex items-center mt-3">
                  <div className="flex">
                  <p className="font-semibold text-gray-900">
