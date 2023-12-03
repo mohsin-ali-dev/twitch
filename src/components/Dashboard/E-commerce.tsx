@@ -40,7 +40,7 @@ const posts = [
     title: 'Laravel to React Nextjs',
     href: '#',
     img:'https://images.unsplash.com/photo-1682686581663-179efad3cd2f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'YIU', href: '#' },{ title: 'Tech', href: '#' },{ title: 'AI', href: '#' }],
+    category: [{ id: 1,title: 'YIU', href: '#' },{ id: 1,title: 'Tech', href: '#' },{ id: 1,title: 'AI', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -53,7 +53,7 @@ const posts = [
     title: 'One of my Favirite Game ',
     href: '#',
     img:'https://images.unsplash.com/photo-1682685797208-c741d58c2eff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -66,7 +66,7 @@ const posts = [
     title: 'Enjoy Natural Places',
     href: '#',
     img:'https://images.unsplash.com/photo-1682687982183-c2937a74257c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -79,7 +79,7 @@ const posts = [
     title: 'Boost your conversion rate',
     href: '#',
     img:'https://images.unsplash.com/photo-1596683858875-63d85de92743?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -92,7 +92,7 @@ const posts = [
     title: 'Boost your conversion rate',
     href: '#',
     img:'https://images.unsplash.com/photo-1701136941793-cfdc15d7f9de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -164,7 +164,7 @@ const maybe = [
     title: 'Enjoy Natural Places',
     href: '#',
     img:'https://images.unsplash.com/photo-1682687982183-c2937a74257c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -177,7 +177,7 @@ const maybe = [
     title: 'Boost your conversion rate',
     href: '#',
     img:'https://images.unsplash.com/photo-1596683858875-63d85de92743?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -190,7 +190,7 @@ const maybe = [
     title: 'Boost your conversion rate',
     href: '#',
     img:'https://images.unsplash.com/photo-1701136941793-cfdc15d7f9de?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    category: [{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' },{ title: 'Marketing', href: '#' }],
+    category: [{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' },{ id: 1,title: 'Marketing', href: '#' }],
     author: {
       name: 'Michael Foster',
       href: '#',
@@ -400,7 +400,7 @@ const ECommerce: React.FC = () => {
         className="gamesSwiper"
       >
 {games.map((game) => (
-  <SwiperSlide>
+  <SwiperSlide key={game.id}>
   <div className='me-4'>
     <Image width={112} height={112} src={game.img} className='rounded-lg object-cover h-64 w-44' alt="" />
     <div>
