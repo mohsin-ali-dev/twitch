@@ -202,7 +202,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           <li>
                             <Link
                               href="/category"
-                              className={`first-letter:group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-black duration-300 ease-in-out hover:text-graydark ${
+                              className={`first-letter:group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-black dark:text-bodydark1 dark:text- duration-300 ease-in-out hover:text-graydark ${
                                 pathname === "/category" &&
                                 "text-[#0000ff8e]"
                               }`}
@@ -213,7 +213,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           <li>
                             <Link
                               href="/category"
-                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-black duration-300 ease-in-out hover:text-graydark ${
+                              className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-black dark:text-bodydark1 duration-300 ease-in-out hover:text-graydark ${
                                 pathname === "/category" &&
                                 "text-[#0000ff8e]"
                               }`}
