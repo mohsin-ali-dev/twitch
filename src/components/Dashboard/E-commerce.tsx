@@ -7,7 +7,7 @@ import Image from "next/image";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+import Heading from '@/components/Heading/Heading';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
@@ -236,18 +236,13 @@ const ECommerce: React.FC = () => {
     <>
 
 <div className="overflow-hidden">
-<div className="flex justify-between items-center">
-<div><h1 className="text-4xl font-medium text-black dark:text-white">Today Top Streaming</h1></div>
-<div><button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-base font-semibold rounded-full text-primary border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:bg-black dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-  See All
-</button></div>
-</div>
+<Heading title='Today Top Streaming' link='/' />
 <div className="flex items-center pt-5 sm:mt-4">
 <button type="button" className="me-4 flex items-center text-blue-700 bg-[#1a57db13]  border border-blue-700 focus:outline-none font-semibold rounded-full text-base px-5 py-3 text-center "><span className="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-grid-fill" viewBox="0 0 16 16">
   <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
 </svg></span>All Categories</button>
 {cate.map((post) => (
-<button key={post.id} type="button" className="me-4 flex items-center text-gray-600  border border-gray-300 focus:outline-none font-semibold rounded-full text-base px-5 py-3 text-center "><span className="me-2" dangerouslySetInnerHTML={createMarkup(post.icon)}></span>{post.text}</button>
+<button key={post.id} type="button" className="me-4 flex items-center text-gray-600  border border-gray-300 focus:outline-none font-semibold rounded-full text-base px-5 py-3 text-center dark:text-gray-300"><span className="me-2" dangerouslySetInnerHTML={createMarkup(post.icon)}></span>{post.text}</button>
 ))}
 </div>
 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-5 pt-5 sm:mt-4  lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -269,10 +264,10 @@ const ECommerce: React.FC = () => {
               </div>
 
               <Image width={112} height={112} src={post.img} alt="" className="rounded-t-lg h-44 w-full object-cover"/>
-           <div className="border-b border-l border-r border-gray-200 px-4 pb-3 w-full rounded-b-lg">
+           <div className="border-b border-l border-r border-gray-200 dark:border-gray-700 px-4 pb-3 w-full rounded-b-lg dark:bg-gray-800">
           
               <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-black group-hover:text-gray-900">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-black  dark:text-white">
                   <a href={post.href} dangerouslySetInnerHTML={createMarkup(post.title)}>
                     {/* <span className="absolute inset-0" /> */}
                   </a>
@@ -281,7 +276,7 @@ const ECommerce: React.FC = () => {
                 {post.category.map((item) => (
                 <a key={item.id}
                   href={item.href}
-                  className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                  className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-200 "
                 >
                   {item.title} 
                 </a>
@@ -292,7 +287,7 @@ const ECommerce: React.FC = () => {
                 <Image width={112} height={112} src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
                 <div className="flex items-center mt-3">
                  <div className="flex">
-                 <p className="font-semibold text-gray-900">
+                 <p className="font-semibold text-gray-900 dark:text-gray-200">
                     <a href={post.author.href} className="flex items-center">
                       <span className="absolute inset-0" />
                       {post.author.name} <span className="ms-1"><MdVerified className='text-lg text-blue-700' /></span>
@@ -313,12 +308,9 @@ const ECommerce: React.FC = () => {
             </article>
           ))}
         </div>
-        <div className="flex justify-between items-center pt-5 sm:mt-4">
-<div><h1 className="text-4xl font-medium text-black dark:text-white">Popular Streamer</h1></div>
-<div><button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-base font-semibold rounded-full text-primary border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:bg-black dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-  See All
-</button></div>
+        <div className="mt-4">
 </div>
+<Heading title='Popular Streamer' link='/' />
 <div className="flex items-center pt-5 sm:mt-4">
 <Swiper
         slidesPerView={7}
@@ -328,21 +320,21 @@ const ECommerce: React.FC = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        Chappy
     </div>
 </div></SwiperSlide>
 <SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        Bangpen
     </div>
 </div></SwiperSlide>
 <SwiperSlide>
-<div className="me-3 relative flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 relative flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full border-4 border-red-600 object-cover" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
     <span className="top-0 left-10 absolute  w-3.5 h-3.5 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
@@ -350,32 +342,32 @@ const ECommerce: React.FC = () => {
     </div>
 </div></SwiperSlide>
 <SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        Ninjs
     </div>
 </div></SwiperSlide><SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        ForSaken
     </div>
 </div></SwiperSlide><SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://images.unsplash.com/photo-1507874609475-6407fb6170f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        Ahmeyd
     </div>
 </div></SwiperSlide><SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://images.unsplash.com/photo-1465405319612-e87fd78c23f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        Kaelasv
     </div>
 </div></SwiperSlide>
 <SwiperSlide>
-<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white ">
+<div className="me-3 flex items-center border border-gray-200 rounded-full px-3 py-1.5 bg-white dark:bg-gray-800 dark:border-gray-500">
     <Image width={112} height={112} className="w-13 h-13 rounded-full object-cover" src="https://images.unsplash.com/photo-1465405319612-e87fd78c23f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
     <div className="text-black dark:text-white text-lg font-semibold ms-3 pe-3">
        Kaelasv
@@ -384,12 +376,8 @@ const ECommerce: React.FC = () => {
 </Swiper>
 </div>
 {/* Most Played Games */}
-<div className="flex justify-between items-center pt-5 sm:mt-4">
-<div><h1 className="text-4xl font-medium text-black dark:text-white">Most Played Games</h1></div>
-<div><button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-base font-semibold rounded-full text-primary border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:bg-black dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-  See All
-</button></div>
-</div>
+<div className="mt-4"></div>
+<Heading title='Most Played Games' link='/' />
 {/* Most played games cards */}
 <div className="flex items-center pt-5 sm:mt-4">
 <Swiper
@@ -404,12 +392,12 @@ const ECommerce: React.FC = () => {
   <div className='me-4'>
     <Image width={112} height={112} src={game.img} className='rounded-lg object-cover h-64 w-44' alt="" />
     <div>
-      <h3 className='text-xl font-bold leading-7 text-black'>{game.title}</h3>
+      <h3 className='text-xl font-bold leading-7 text-black dark:text-white'>{game.title}</h3>
       <div className="flex items-center">
 <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-dot text-red-600 font-bold text-lg" viewBox="0 0 16 16">
   <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
 </svg></span>
-<span className='text-base font-semibold text-black'>{game.views}</span>
+<span className='text-base font-semibold text-black dark:text-white'>{game.views}</span>
       </div>
     </div>
   </div>
@@ -418,75 +406,70 @@ const ECommerce: React.FC = () => {
    </Swiper>
 </div>
 {/* maybe You like */}
-<div className="flex justify-between items-center pt-5 sm:mt-4">
-<div><h1 className="text-4xl font-medium text-black dark:text-white">Maybe You Like</h1></div>
-<div><button type="button" className="py-2 px-4 inline-flex items-center gap-x-2 text-base font-semibold rounded-full text-primary border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:bg-black dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-  See All
-</button></div>
-</div>
+<div className="mt-4"></div>
+<Heading title='Maybe You Like' link='/' />
 
 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-5 pt-5 sm:mt-4  lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {maybe.map((post) => (
             <article key={post.id} className="flex max-w-xl flex-col items-start justify-between  shadow-md rounded-lg">
-                <div className="flex items-center text-xs absolute ps-4 pt-3">
-                <div className="rounded-full bg-black flex justify-between items-center ps-1">
-                <span
-                  className="relative z-10 rounded-full bg-red-600 px-3  py-1.5 font-medium text-white "
-                >
-                  Live
-                </span>
-                <span
-                  className="relative z-10 rounded-full bg-black px-3 me-1 py-2.5 font-medium text-white flex items-center justify-end"
-                >
-                <span><IoEyeOutline className='me-2 text-white text-base' /></span> 89.2K
-                </span>
-                </div>
-              </div>
+            <div className="flex items-center text-xs absolute ps-4 pt-3">
+            <div className="rounded-full bg-black flex justify-between items-center ps-1">
+            <span
+              className="relative z-10 rounded-full bg-red-600 px-3  py-1.5 font-medium text-white "
+            >
+              Live
+            </span>
+            <span
+              className="relative z-10 rounded-full bg-black px-3 me-1 py-2.5 font-medium text-white flex items-center justify-end"
+            >
+            <span><IoEyeOutline className='me-2 text-white text-base' /></span> 89.2K
+            </span>
+            </div>
+          </div>
 
-              <Image width={112} height={112} src={post.img} alt="" className="rounded-t-lg h-44 w-full object-cover"/>
-           <div className="border-b border-l border-r border-gray-200 px-4 pb-3 w-full rounded-b-lg">
-          
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-black group-hover:text-gray-900">
-                  <a href={post.href} dangerouslySetInnerHTML={createMarkup(post.title)}>
-                    {/* <span className="absolute inset-0" /> */}
-                  </a>
-                </h3>
-                <div className="flex items-center text-xs mt-3">
-                {post.category.map((item) => (
-                <a 
-                key={item.id}
-                  href={item.href}
-                  className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                >
-                  {item.title} 
+          <Image width={112} height={112} src={post.img} alt="" className="rounded-t-lg h-44 w-full object-cover"/>
+       <div className="border-b border-l border-r border-gray-200 dark:border-gray-700 px-4 pb-3 w-full rounded-b-lg dark:bg-gray-800">
+      
+          <div className="group relative">
+            <h3 className="mt-3 text-lg font-semibold leading-6 text-black  dark:text-white">
+              <a href={post.href} dangerouslySetInnerHTML={createMarkup(post.title)}>
+                {/* <span className="absolute inset-0" /> */}
+              </a>
+            </h3>
+            <div className="flex items-center text-xs mt-3">
+            {post.category.map((item) => (
+            <a key={item.id}
+              href={item.href}
+              className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-200 "
+            >
+              {item.title} 
+            </a>
+            ))}
+          </div>
+          </div>
+          <div className="relative flex items-center gap-x-4">
+            <Image width={112} height={112} src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+            <div className="flex items-center mt-3">
+             <div className="flex">
+             <p className="font-semibold text-gray-900 dark:text-gray-200">
+                <a href={post.author.href} className="flex items-center">
+                  <span className="absolute inset-0" />
+                  {post.author.name} <span className="ms-1"><MdVerified className='text-lg text-blue-700' /></span>
                 </a>
-                ))}
-              </div>
-              </div>
-              <div className="relative flex items-center gap-x-4">
-                <Image width={112} height={112} src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
-                <div className="flex items-center mt-3">
-                 <div className="flex">
-                 <p className="font-semibold text-gray-900">
-                    <a href={post.author.href} className="flex items-center">
-                      <span className="absolute inset-0" />
-                      {post.author.name} <span className="ms-1"><MdVerified className='text-lg text-blue-700' /></span>
-                    </a>
-                  </p>
-                 </div>
+              </p>
+             </div>
 <div>
 <button type="button" className="ms-4 flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-full text-sm px-3 py-2 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 "><span className="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-music-note-beamed" viewBox="0 0 16 16">
-  <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
-  <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
-  <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
+<path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
+<path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
+<path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
 </svg></span>Music</button>
 
 </div>
-                </div>
-              </div>
-           </div>
-            </article>
+            </div>
+          </div>
+       </div>
+        </article>
           ))}
         </div>
 </div>
