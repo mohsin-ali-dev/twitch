@@ -131,48 +131,47 @@ const live: React.FC = () => {
               </div>
 
               <Image width={112} height={112}  src={post.img} alt="" className="rounded-t-lg h-44 w-full object-cover"/>
-           <div className="border-b border-l border-r border-gray-200 px-4 pb-3 w-full rounded-b-lg">
-          
-              <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-black group-hover:text-gray-900">
-                  <a href={post.href} dangerouslySetInnerHTML={createMarkup(post.title)}>
-                    {/* <span className="absolute inset-0" /> */}
-                  </a>
-                </h3>
-                <div className="flex items-center text-xs mt-3">
-                {post.category.map((item) => (
-                <a
-                key={item.id}
-                  href={item.href}
-                  className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                >
-                  {item.title} 
+              <div className="border-b border-l border-r border-gray-200 dark:border-gray-700 px-4 pb-3 w-full rounded-b-lg dark:bg-gray-800">
+      
+          <div className="group relative">
+            <h3 className="mt-3 text-lg font-semibold leading-6 text-black  dark:text-white">
+              <a href={post.href} dangerouslySetInnerHTML={createMarkup(post.title)}>
+                {/* <span className="absolute inset-0" /> */}
+              </a>
+            </h3>
+            <div className="flex items-center text-xs mt-3">
+            {post.category.map((item) => (
+            <a key={item.id}
+              href={item.href}
+              className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-600 dark:text-gray-200 "
+            >
+              {item.title} 
+            </a>
+            ))}
+          </div>
+          </div>
+          <div className="relative flex items-center gap-x-4">
+            <Image width={112} height={112} src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+            <div className="flex items-center mt-3">
+             <div className="flex">
+             <p className="font-semibold text-gray-900 dark:text-gray-200">
+                <a href={post.author.href} className="flex items-center">
+                  <span className="absolute inset-0" />
+                  {post.author.name} <span className="ms-1"><MdVerified className='text-lg text-blue-700' /></span>
                 </a>
-                ))}
-              </div>
-              </div>
-              <div className="relative flex items-center gap-x-4">
-                <Image width={112} height={112}  src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
-                <div className="flex items-center mt-3">
-                 <div className="flex">
-                 <p className="font-semibold text-gray-900">
-                    <a href={post.author.href} className="flex items-center">
-                      <span className="absolute inset-0" />
-                      {post.author.name} <span className="ms-1"><MdVerified className='text-lg text-blue-700' /></span>
-                    </a>
-                  </p>
-                 </div>
+              </p>
+             </div>
 <div>
 <button type="button" className="ms-4 flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:outline-none font-medium rounded-full text-sm px-3 py-2 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 "><span className="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-music-note-beamed" viewBox="0 0 16 16">
-  <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
-  <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
-  <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
+<path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"/>
+<path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"/>
+<path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"/>
 </svg></span>Music</button>
 
 </div>
-                </div>
-              </div>
-           </div>
+            </div>
+          </div>
+       </div>
             </article>
           ))}
         </div>

@@ -139,25 +139,25 @@ const clips : React.FC = () => {
               </div>
 
               <Image width={112} height={112}  src={post.img} alt="" className="rounded-l-lg h-44 w-full object-cover"/>
-           <div className="border-b border-t  border-r border-gray-200 px-4 pb-3 h-full w-full rounded-r-lg flex flex-col justify-center">
+           <div className="border-b border-t  border-r border-gray-200 px-4 pb-3 h-full w-full rounded-r-lg flex flex-col justify-center dark:border-gray-700 dark:bg-gray-800">
           
               <div className="group relative flex justify-between flex-col">
                <div>
-               <h3 className="text-lg font-semibold leading-6 text-black group-hover:text-gray-900">
+               <h3 className="text-lg font-semibold leading-6 text-black dark:text-white ">
                   <a href={post.href} dangerouslySetInnerHTML={createMarkup(post.title)}>
                     {/* <span className="absolute inset-0" /> */}
                   </a>
                 </h3>
                </div>
                 <div className="mt-4 flex items-center text-sm">
-                  <span className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100 ">
+                  <span className="relative z-10 rounded-full bg-gray-200 px-3 my-2 me-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">
                     {post.views} Views
                   </span>
-                  <span className="relative z-10  pe-0 ps-1 my-2 py-1.5 font-medium text-gray-600 ">
+                  <span className="relative z-10  pe-0 ps-1 my-2 py-1.5 font-medium text-gray-600 dark:text-gray-100">
                     .
                   </span>
                 <span
-                  className="relative z-10  px-3 my-2 py-1.5 font-medium text-gray-600"
+                  className="relative z-10  px-3 my-2 py-1.5 font-medium text-gray-600 dark:text-gray-100"
                 >
                   {post.time}
                 </span>
@@ -167,7 +167,7 @@ const clips : React.FC = () => {
                 <Image width={112} height={112}  src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
                 <div className="flex items-center mt-3">
                  <div className="flex">
-                 <p className="font-semibold text-gray-900">
+                 <p className="font-semibold text-gray-900 dark:text-gray-100">
                     <a href={post.author.href} className="flex items-center">
                       {post.author.name} <span className="ms-1"><MdVerified className='text-lg text-blue-700' /></span>
                     </a>
